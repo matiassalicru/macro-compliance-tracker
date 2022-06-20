@@ -40,7 +40,6 @@ handler.post(async (req, res) => {
     .collection('Daily')
     .updateOne({ date: new Date(data.date) }, { $set: data }, { upsert: true })
 
-  console.log('new doc', doc)
   res.json({ message: 'ok' })
 })
 

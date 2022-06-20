@@ -11,15 +11,12 @@ import dayjs from 'dayjs'
 
 const Home = ({ data }) => {
   const [results, setResults] = useState(data)
-  console.log('results', results)
 
   const updateMacros = async () => {
     const res = await fetch('http://localhost:3000/api/daily', {
       method: 'post',
       body: JSON.stringify(results),
     })
-
-    console.log('res', res)
   }
 
   const onChange = (e) => {
